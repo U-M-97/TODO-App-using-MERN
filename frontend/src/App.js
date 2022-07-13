@@ -24,7 +24,7 @@ const App = () => {
     if(!input){
       window.alert("Please enter your task")
     }else{
-      const res = await fetch('http://localhost:5000' , {
+      const res = await fetch('https://todo-mern-usama.herokuapp.com/' , {
           method:"POST",
           headers:{
             "Content-Type":"application/json"
@@ -52,7 +52,7 @@ const App = () => {
     //   )
     // })
     console.log(id)
-    const res = await fetch("http://localhost:5000/delete/" + id, {
+    const res = await fetch("https://todo-mern-usama.herokuapp.com/delete/" + id, {
       method: "DELETE"
     })
     await res.json()
@@ -61,7 +61,7 @@ const App = () => {
   } 
 
   const removeAll = async () =>{
-    const res = await fetch("http://localhost:5000/deleteAll" , {
+    const res = await fetch("https://todo-mern-usama.herokuapp.com/deleteAll" , {
       method:"DELETE"
     })
     await res.json()
@@ -70,7 +70,7 @@ const App = () => {
 
   const display = async () =>{
     console.log("running")
-    const res = await fetch('http://localhost:5000/display')
+    const res = await fetch('https://todo-mern-usama.herokuapp.com/display')
     const data = await res.json()
     setItems(data)
     // setItems([...items, data])
